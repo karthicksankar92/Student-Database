@@ -1,0 +1,78 @@
+<script>
+function ajax_post(){
+   
+  
+    var fn = document.getElementById("first_name").value;
+    var ln = document.getElementById("last_name").value;
+	var course = document.getElementById("course").value;
+	
+	var booktitle = document.getElementById("booktitle").value;
+	var bookpub = document.getElementById("bookpublisher").value;
+	var bookedi = document.getElementById("bookedition").value;
+	var dateofprint = document.getElementById("dateofprinting").value;
+	
+document.getElementById("demo1").value=fn;	
+  
+}
+
+	
+
+</script>
+<table>
+<tr>
+<td>Your First Name:</td>
+<td> <input id="first_name" name="first_name" type="text" /></td>
+</tr> 
+<tr>
+<td>Your Last Name: </td>
+<td><input id="last_name" name="last_name" type="text" /></td>
+</tr>
+<tr>
+<td>Course:</td>
+<td><select id ="course" name="Course" >
+<option value="--select course--"> --select course-- </option>
+<option value="Operating Systems"> Operating Systems </option>
+<option value="Client/Server"> Client/Server </option>
+<option value="Software Engineering"> Software Engineering </option></select>
+  </td>
+</tr>
+<tr>
+<td>Book Title:</td>
+<td><select id="booktitle" name="booktitle"  />
+</select> </td>
+
+</tr>
+<tr>
+<td>Book Edition:</td>
+<td><select id="bookedition" name="bookedition">
+<option value="--select edition--"> --select edition-- </option>
+<option value="1"> 1 </option>
+<option value="2"> 2 </option>
+<option value="3"> 3 </option>
+<option value="4"> 4 </option>
+<option value="5"> 5 </option>
+<option value="6"> 6 </option>
+<option value="7"> 7 </option>
+<option value="8"> 8 </option>
+<option value="9"> 9 </option>
+</select>
+ </td>
+</tr>
+<tr>
+<td>Book publisher:</td>
+<td><select id="bookpublisher" name="bookpublisher">
+<option value="--select publisher--"> --select publisher-- </option>
+<option value="Random House"> Random House </option>
+<option value="Elsevier"> Elsevier </option>
+<option value="Springer"> Springer </option></select>
+ </td>
+</tr>
+<tr>
+<td>Date of Printing:</td>
+<td><input id="dateofprinting" name="dateofprinting" type="text"  /></td>
+</tr>
+<tr>
+<td><input name="myBtn" type="submit" value="Submit Data" onClick="javascript:ajax_post();"></td>
+</tr>
+</table>
+<div id="demo1"></div>

@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+<html>
+<head>
+
+<script src="getinfo.js" language="javascript" type="text/javascript">
+</script>
+<script>
+function clearBook(){
+	document.getElementById("first_name").value='';
+	document.getElementById("last_name").value='';
+	document.getElementById("course").value='--select course--';
+	document.getElementById("booktitle").value='';
+	document.getElementById("bookedition").value='';
+	document.getElementById("bookpublisher").value='';
+	document.getElementById("dateofprinting").value='';
+}
+</script>
+<script>
+var i=1;
+function addBook()
+{
+	//var i=1;
+	 var hr = new XMLHttpRequest();
+    // Create some variables we need to send to our PHP file
+    var url = "flag.php";
+    var fn = document.getElementById("booktitle").value;
+	var  be= document.getElementById("bookedition").value;
+	var bp = document.getElementById("bookpublisher").value;
+	var dp = document.getElementById("dateofprinting").value;
+var vars = "booktitle="+fn+"&bookedition="+be+"&bookpublisher="+bp+"&dateofprinting="+dp;
+    hr.open("POST", url, true);
+    // Set content type header information for sending url encoded variables in the request
+    hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    // Access the onreadystatechange event for the XMLHttpRequest object
+    hr.onreadystatechange = function() {
+	    if(hr.readyState == 4 && hr.status == 200) {
+		    var return_data = hr.responseText;
+		 
+			
+			switch (i)
+			{
+				case 1:
+			document.getElementById("demo1").innerHTML =return_data;
+	    	i=i+1;
+			break;
+			case 2:
+			document.getElementById("demo2").innerHTML = return_data;
+			i=i+1;
+			break;
+			case 3:
+			document.getElementById("demo3").innerHTML = return_data;
+			i=i+1;
+			break;
+			case 4:
+			document.getElementById("demo4").innerHTML = return_data;
+			i=i+1;
+			break;
+			case 5:
+			document.getElementById("demo5").innerHTML = return_data;
+			i=i+1;
+			break;
+			case 6:
+			document.getElementById("demo6").innerHTML = return_data;
+			i=i+1;
+			break;
+			case 7:
+			document.getElementById("demo7").innerHTML = return_data;
+			i=i+1;
+			break;
+			case 8:
+			document.getElementById("demo8").innerHTML = return_data;
+			i=i+1;
+			break;
+			case 9:
+			document.getElementById("demo9").innerHTML = return_data;
+			i=i+1;
+			break;
+			
+			}
+			
+		}
+		
+		
+    }
+    // Send the data to PHP now... and wait for response to update the status div
+    hr.send(vars); // Actually execute the request
+    //document.getElementById("").innerHTML = "processing...";
+}
+
+	
+
+</script>
+<script src="addcourse.js"></script>
+</script>
+<script src="try.js"></script>
+</head>
+<body>
+<h2>Student Entry Details</h2>
+
+<table>
+<tr>
+<td>Your First Name:</td>
+<td> <input id="first_name" name="first_name" type="text" /></td>
+</tr> 
+<tr>
+<td>Your Last Name: </td>
+<td><input id="last_name" name="last_name" type="text" /></td>
+</tr>
+<tr>
+<td>Course:</td>
+<td><select id ="course" name="Course" onchange="configureDropDownLists(this,'booktitle')" >
+<option value="--select course--"> --select course-- </option>
+<option value="Operating Systems"> Operating Systems </option>
+<option value="Client/Server"> Client/Server </option>
+<option value="Software Engineering"> Software Engineering </option></select>
+  </td>
+</tr>
+<tr>
+<td>Book Title:</td>
+<td><select id="booktitle" name="booktitle"  />
+</select> </td>
+
+</tr>
+<tr>
+<td>Book Edition:</td>
+<td><select id="bookedition" name="bookedition">
+<option value="--select edition--"> --select edition-- </option>
+<option value="1"> 1 </option>
+<option value="2"> 2 </option>
+<option value="3"> 3 </option>
+<option value="4"> 4 </option>
+<option value="5"> 5 </option>
+<option value="6"> 6 </option>
+<option value="7"> 7 </option>
+<option value="8"> 8 </option>
+<option value="9"> 9 </option>
+</select>
+ </td>
+</tr>
+<tr>
+<td>Book publisher:</td>
+<td><select id="bookpublisher" name="bookpublisher">
+<option value="--select publisher--"> --select publisher-- </option>
+<option value="Random House"> Random House </option>
+<option value="Elsevier"> Elsevier </option>
+<option value="Springer"> Springer </option></select>
+ </td>
+</tr>
+<tr>
+<td>Date of Printing:</td>
+<td><input id="dateofprinting" name="dateofprinting" type="text"  /></td>
+</tr>
+<tr>
+
+<td> <input type="reset"  name="reset" value="Reset" onClick="clearBook()" /></td>
+<td><input name="myBtn" type="submit" value="Submit Data" onClick="javascript:ajax_post();"></td>
+<td><input type="button" name="AddBook" value="AddBook " onClick="addBook()" />  </td>
+<td><input type="button" name="Addcourse" value="Addcourse" onClick="addCourse()"/></td>
+<td><input type="button" name="Addstudent" value="AddStudent" onclick="javascript:ajax_post();" /></td>
+</tr>
+</table>
+
+<div id="status"></div>
+<div id="demo1"></div>
+<div id="c1"></div>
+<div id="demo2"></div>
+<div id="c2"></div>
+<div id="demo3"></div>
+<div id="status1"></div>
+<div id="demo4"></div>
+<div id="c3"></div>
+<div id="demo5"></div>
+<div id="c4"></div>
+<div id="demo6"></div>
+<div id="status2"></div>
+<div id="demo7"></div>
+<div id="c5"></div>
+<div id="demo8"></div>
+<div id="c6"></div>
+<div id="demo9"></div>
+</body>
+</html>
+

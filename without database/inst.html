@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Instructor page</title>
+
+
+</head>
+
+<form>
+<table>
+<tr>
+<td>Course Name:</td>
+<td><input type="text" id="cn" name="title" value=""  /> </td></tr>
+<tr>
+<tr>
+<td>Book Title:</td>
+<td><input type="text" id ="bt"name="title" value=""  /> </td></tr>
+<tr>
+<td>Book Publisher:</td>
+<td><input type="text" id="bp" name="publisher" value=""  /><br /></td>
+</tr>
+<tr>
+<td>Book Edition:</td>
+<td><input  type="text" id="be"name="edition" value=""  /><br /></td>
+</tr>
+<tr>
+<td>Date of Printing:</td>
+<td><input type="text" id="dp"name="printing" value=""  /><br /></td>
+</tr>
+<tr>
+<td><input type="submit" name="Submit" value="submit" onclick="getinfo()" /></td>
+<td><input type= "reset"  name="Clear" value="clear" /></td>
+</tr>
+</table> </form>
+<body>
+
+<script  src="getinfo.js">
+/*function getinfo()
+{
+	var course = document.getElementById("cn").value;
+	var booktitle = document.getElementById("bt").value;
+	var bookpub = document.getElementById("bp").value;
+	var bookedition=document.getElementById("be").value;
+	var dateofprinting=document.getElementById("dp").value;
+	document.getElementById("demo").innerHTML= course;
+	document.getElementById("demo1").innerHTML= booktitle;
+	document.getElementById("demo2").innerHTML= bookpub;
+	document.getElementById("demo3").innerHTML= bookedition;
+	document.getElementById("demo4").innerHTML= dateofprinting;
+}*/
+
+
+</script>
+<p id="comp"></p>
+<p id="demo"> </p>
+
+</body>
+</html>

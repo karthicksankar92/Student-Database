@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title></title>
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+window.onload = initAll;
+
+function initAll(){
+
+	for(var i = 0; i<=10; i++)
+	{
+		var c=document.getElementById('container');
+		var input = document.createElement('input');
+		input.setAttribute('type','text');
+		input.setAttribute('id','num'+(i+1));
+		//Adds first input to container
+		c.appendChild(input);
+		input = '';
+	}
+
+}
+
+</script>
+</head>
+<body>
+
+	<div id="container">
+
+	</div>
+
+</body>
+
+</html>
